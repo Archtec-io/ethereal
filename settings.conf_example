@@ -1,0 +1,13 @@
+
+--[[
+	Ethereal Settings can be changed here and kept even after the mod
+	has been updated
+--]]
+
+ethereal.leaftype = 0 -- 0 for 2D plantlike, 1 for 3D allfaces
+ethereal.leafwalk = false -- true for walkable leaves, false to fall through
+
+-- Set following to 1 to enable biome or false to disable
+ethereal.bamboo    = 1 -- Bamboo with sprouts
+ethereal.healing   = 1 -- Snowy peaks with healing trees
+ethereal.frost     = 1 -- Blue dirt with blue/pink frost trees
