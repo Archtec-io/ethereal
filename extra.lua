@@ -343,7 +343,7 @@ minetest.register_craft({
 	}
 })
 
-
+--[[
 -- Charcoal Lump
 minetest.register_craftitem("ethereal:charcoal_lump", {
 	description = S("Lump of Charcoal"),
@@ -378,7 +378,7 @@ minetest.register_craft({
 		{"default:stick"}
 	}
 })
-
+]]--
 
 -- staff of light alternative node list
 ethereal.lightstaff_recipes = {

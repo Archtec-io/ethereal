@@ -767,7 +767,7 @@ if minetest.registered_nodes["default:coral_green"] then
 	})
 end
 
-
+--[[
 local random = math.random
 
 -- Generate Illumishroom in caves on top of coal
@@ -799,3 +799,4 @@ minetest.register_on_generated(function(minp, maxp)
 		end
 	end
 end)
+]]--

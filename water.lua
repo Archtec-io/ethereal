@@ -43,7 +43,7 @@ minetest.register_craft({
 	}
 })
 
-
+--[[
 -- If Crystal Spike, Snow near Water, change Water to Ice
 minetest.register_abm({
 	label = "Ethereal freeze water",
@@ -134,7 +134,7 @@ minetest.register_abm({
 		end
 	end
 })
-
+]]--
 
 -- when enabled, drop torches that are touching water
 if ethereal.torchdrop == true and not minetest.get_modpath("real_torch") then
