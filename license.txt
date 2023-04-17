@@ -55,8 +55,8 @@ Based on tree textures by ElementW (CC BY-SA 3.0):
   ethereal_scorched_tree_top.png
 
 Based on wood texture by BlockMen (CC BY-SA 3.0):
-  ethereal_yellow_wood.png
-  ethereal_frost_wood.png
+  ethereal_yellow_wood.png [edited by alerikaisattera]
+  ethereal_frost_wood.png [edited by alerikaisattera]
 
 Based on bottle texture by Thomas-S (CC BY-SA 3.0):
   ethereal_flight_potion.png
@@ -110,11 +110,11 @@ Textures by SaKeL (CC-BY-SA-4.0)
   ethereal_fish_angler.png
   ethereal_fish_jellyfish.png
   ethereal_fish_chichlid.png
-  ethereal_fish_cooked.png
 
 Texture by Sirrobzeroone (CC0)
   ethereal_fish_seahorse*.png
   ethereal_fish_coy.png
+  ethereal_fish_cooked.png
 
 Textures by Epoxum (CC0)
   ethereal_sushi_*.png
