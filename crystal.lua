@@ -226,12 +226,17 @@ minetest.register_craft({
 
 -- dig override for crystal shovel's silk touch ability
 local old_handle_node_drops = minetest.handle_node_drops
+local shovels = {
+	["ethereal:shovel_crystal"] = true,
+	["ethereal:enchanted_shovel_crystal_durable"] = true,
+	["ethereal:enchanted_shovel_crystal_fast"] = true,
+}
 
 function minetest.handle_node_drops(pos, drops, digger)
 
 	-- are we holding Crystal Shovel?
 	if not digger
-	or digger:get_wielded_item():get_name() ~= "ethereal:shovel_crystal" then
+	or shovels[digger:get_wielded_item():get_name()] ~= true then
 		return old_handle_node_drops(pos, drops, digger)
 	end
 
