@@ -17,8 +17,7 @@ minetest.register_node("ethereal:banana", {
 		fixed = {-0.31, -0.5, -0.31, 0.31, 0.5, 0.31}
 	},
 	groups = {
-		food_banana = 1, fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 1, leafdecay_drop = 1
+		food_banana = 1, fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1
 	},
 	drop = "ethereal:banana",
 	on_use = minetest.item_eat(2),
@@ -31,6 +30,8 @@ minetest.register_node("ethereal:banana", {
 		end
 	end
 })
+
+ethereal.add_eatable("ethereal:banana", 2)
 
 -- Banana Bunch
 minetest.register_node("ethereal:banana_bunch", {
@@ -47,8 +48,7 @@ minetest.register_node("ethereal:banana_bunch", {
 		fixed = {-0.31, -0.5, -0.31, 0.31, 0.5, 0.31}
 	},
 	groups = {
-		fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 1, leafdecay_drop = 1
+		fleshy = 3, dig_immediate = 3, leafdecay = 1, leafdecay_drop = 1
 	},
 	drop = "ethereal:banana_bunch",
 	on_use = minetest.item_eat(6),
@@ -60,6 +60,8 @@ minetest.register_node("ethereal:banana_bunch", {
 		end
 	end
 })
+
+ethereal.add_eatable("ethereal:banana_bunch", 6)
 
 -- Bunch to Single
 minetest.register_craft({
@@ -106,7 +108,7 @@ minetest.register_node("ethereal:orange", {
 		fixed = {-0.27, -0.37, -0.27, 0.27, 0.44, 0.27}
 	},
 	groups = {
-		food_orange = 1, fleshy = 3, dig_immediate = 3, flammable = 2,
+		food_orange = 1, fleshy = 3, dig_immediate = 3,
 		leafdecay = 3, leafdecay_drop = 1
 	},
 	drop = "ethereal:orange",
@@ -121,25 +123,30 @@ minetest.register_node("ethereal:orange", {
 	end
 })
 
+ethereal.add_eatable("ethereal:orange", 4)
+
 
 -- Pine Nuts (Heals 1/2 heart when eaten)
 minetest.register_craftitem("ethereal:pine_nuts", {
 	description = S("Pine Nuts"),
 	inventory_image = "ethereal_pine_nuts.png",
 	wield_image = "ethereal_pine_nuts.png",
-	groups = {food_pine_nuts = 1, flammable = 2},
+	groups = {food_pine_nuts = 1},
 	on_use = minetest.item_eat(1)
 })
+
+ethereal.add_eatable("ethereal:pine_nuts", 1)
 
 -- Banana Loaf (Heals 3 hearts when eaten)
 minetest.register_craftitem("ethereal:banana_bread", {
 	description = S("Banana Loaf"),
 	inventory_image = "ethereal_banana_bread.png",
 	wield_image = "ethereal_banana_bread.png",
-	groups = {food_bread = 1, flammable = 3},
+	groups = {food_bread = 1},
 	on_use = minetest.item_eat(6)
 })
 
+ethereal.add_eatable("ethereal:banana_bread", 6)
 
 -- coconut settings if farming redo found
 local fredo = minetest.get_modpath("farming") and farming and farming.mod
@@ -183,9 +190,11 @@ minetest.register_craftitem("ethereal:coconut_slice", {
 	description = S("Coconut Slice"),
 	inventory_image = "moretrees_coconut_slice.png",
 	wield_image = "moretrees_coconut_slice.png",
-	groups = {food_coconut_slice = 1, flammable = 1},
+	groups = {food_coconut_slice = 1},
 	on_use = minetest.item_eat(1)
 })
+
+ethereal.add_eatable("ethereal:coconut_slice", 1)
 
 -- coconut slice recipe (farming redo)
 if fredo then
@@ -222,8 +231,7 @@ minetest.register_node("ethereal:golden_apple", {
 		fixed = {-0.2, -0.37, -0.2, 0.2, 0.31, 0.2}
 	},
 	groups = {
-		fleshy = 3, dig_immediate = 3,
-		leafdecay = 3,leafdecay_drop = 1
+		fleshy = 3, dig_immediate = 3, leafdecay = 3,leafdecay_drop = 1, eatable = 2
 	},
 	drop = "ethereal:golden_apple",
 	sounds = default.node_sound_leaves_defaults(),
@@ -246,6 +254,7 @@ minetest.register_node("ethereal:golden_apple", {
 	end
 })
 
+
 -- Hearty Stew (Heals 5 hearts)
 minetest.register_craftitem("ethereal:hearty_stew", {
 	description = S("Hearty Stew"),
@@ -253,6 +262,8 @@ minetest.register_craftitem("ethereal:hearty_stew", {
 	wield_image = "ethereal_hearty_stew.png",
 	on_use = minetest.item_eat(10, "ethereal:bowl")
 })
+
+ethereal.add_eatable("ethereal:hearty_stew", 10)
 
 minetest.register_craft({
 	output = "ethereal:hearty_stew",
@@ -287,6 +298,8 @@ minetest.register_craftitem("ethereal:bucket_cactus", {
 	on_use = minetest.item_eat(2, "bucket:bucket_empty"),
 })
 
+ethereal.add_eatable("ethereal:bucket_cactus", 2)
+
 minetest.register_craft({
 	output = "ethereal:bucket_cactus",
 	recipe = {{"bucket:bucket_empty","default:cactus"}}
@@ -301,6 +314,8 @@ minetest.register_craftitem("ethereal:firethorn_jelly", {
 	on_use = minetest.item_eat(2, "vessels:glass_bottle"),
 	groups = {vessel = 1}
 })
+
+ethereal.add_eatable("ethereal:firethorn_jelly", 2)
 
 if minetest.registered_items["farming:bowl"] then
 
@@ -334,7 +349,7 @@ minetest.register_node("ethereal:lemon", {
 		fixed = {-0.27, -0.37, -0.27, 0.27, 0.44, 0.27}
 	},
 	groups = {
-		food_lemon = 1, fleshy = 3, dig_immediate = 3, flammable = 2,
+		food_lemon = 1, fleshy = 3, dig_immediate = 3,
 		leafdecay = 3, leafdecay_drop = 1
 	},
 	drop = "ethereal:lemon",
@@ -349,6 +364,8 @@ minetest.register_node("ethereal:lemon", {
 	end
 })
 
+ethereal.add_eatable("ethereal:lemon", 3)
+
 -- Candied Lemon
 minetest.register_craftitem("ethereal:candied_lemon", {
 	description = S("Candied Lemon"),
@@ -357,6 +374,8 @@ minetest.register_craftitem("ethereal:candied_lemon", {
 	groups = {food_candied_lemon = 1},
 	on_use = minetest.item_eat(5)
 })
+
+ethereal.add_eatable("ethereal:candied_lemon", 5)
 
 minetest.register_craft({
 	output = "ethereal:candied_lemon",
@@ -386,6 +405,8 @@ minetest.register_node("ethereal:lemonade", {
 	sounds = default.node_sound_glass_defaults()
 })
 
+ethereal.add_eatable("ethereal:lemonade", 5)
+
 minetest.register_craft({
 	output = "ethereal:lemonade",
 	recipe = {
@@ -414,8 +435,7 @@ minetest.register_node("ethereal:olive", {
 		fixed = {-0.1, -0.5, -0.1, 0.1, -0.3, 0.1}
 	},
 	groups = {
-		fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 3, leafdecay_drop = 1
+		fleshy = 3, dig_immediate = 3, leafdecay = 3, leafdecay_drop = 1
 	},
 	drop = "ethereal:olive",
 	on_use = minetest.item_eat(1),
@@ -428,6 +448,8 @@ minetest.register_node("ethereal:olive", {
 		end
 	end
 })
+
+ethereal.add_eatable("ethereal:olive", 1)
 
 -- Olive Oil
 minetest.register_craftitem("ethereal:olive_oil", {
@@ -457,6 +479,8 @@ minetest.register_craftitem("ethereal:sushi_kappamaki", {
 	on_use = minetest.item_eat(3)
 })
 
+ethereal.add_eatable("ethereal:sushi_kappamaki", 3)
+
 minetest.register_craft({
 	output = "ethereal:sushi_kappamaki 2",
 	recipe = {
@@ -472,6 +496,8 @@ minetest.register_craftitem("ethereal:sushi_nigiri", {
 	on_use = minetest.item_eat(2)
 })
 
+ethereal.add_eatable("ethereal:sushi_nigiri", 2)
+
 minetest.register_craft({
 	output = "ethereal:sushi_nigiri 2",
 	recipe = {
@@ -486,6 +512,8 @@ minetest.register_craftitem("ethereal:sushi_tamago", {
 	inventory_image = "ethereal_sushi_tamago.png",
 	on_use = minetest.item_eat(2)
 })
+
+ethereal.add_eatable("ethereal:sushi_tamago", 2)
 
 minetest.register_craft({
 	output = "ethereal:sushi_tamago 2",
@@ -513,6 +541,8 @@ minetest.register_craftitem("ethereal:fugu", {
 	end
 })
 
+ethereal.add_eatable("ethereal:fugu", 4)
+
 minetest.register_craft({
 	output = "ethereal:fugu",
 	recipe = {
@@ -531,6 +561,8 @@ minetest.register_craftitem("ethereal:teriyaki_chicken", {
 	inventory_image = "ethereal_teriyaki_chicken.png",
 	on_use = minetest.item_eat(4)
 })
+
+ethereal.add_eatable("ethereal:teriyaki_chicken", 4)
 
 minetest.register_craft({
 	output = "ethereal:teriyaki_chicken 2",
@@ -551,6 +583,8 @@ minetest.register_craftitem("ethereal:teriyaki_beef", {
 	inventory_image = "ethereal_teriyaki_beef.png",
 	on_use = minetest.item_eat(12, "ethereal:bowl")
 })
+
+ethereal.add_eatable("ethereal:teriyaki_beef", 12)
 
 minetest.register_craft({
 	output = "ethereal:teriyaki_beef",
@@ -574,6 +608,8 @@ minetest.register_craftitem("ethereal:mushroom_soup", {
 	on_use = minetest.item_eat(5, "ethereal:bowl")
 })
 
+ethereal.add_eatable("ethereal:mushroom_soup", 5)
+
 minetest.register_craft({
 	output = "ethereal:mushroom_soup",
 	recipe = {
@@ -590,6 +626,8 @@ minetest.register_craftitem("ethereal:fish_shrimp_cooked", {
 	inventory_image = "ethereal_fish_shrimp_cooked.png",
 	on_use = minetest.item_eat(2)
 })
+
+ethereal.add_eatable("ethereal:fish_shrimp_cooked", 2)
 
 minetest.register_craft({
 	output = "ethereal:fish_shrimp_cooked 5",
@@ -611,6 +649,8 @@ minetest.register_craftitem("ethereal:garlic_shrimp", {
 	on_use = minetest.item_eat(6)
 })
 
+ethereal.add_eatable("ethereal:garlic_shrimp", 6)
+
 minetest.register_craft({
 	output = "ethereal:garlic_shrimp",
 	recipe = {
@@ -628,6 +668,8 @@ minetest.register_craftitem("ethereal:jellyfish_salad", {
 	on_use = minetest.item_eat(6)
 })
 
+ethereal.add_eatable("ethereal:jellyfish_salad", 4)
+
 minetest.register_craft({
 	output = "ethereal:jellyfish_salad",
 	recipe = {
@@ -644,6 +686,8 @@ minetest.register_craftitem("ethereal:calamari_raw", {
 	on_use = minetest.item_eat(-2)
 })
 
+ethereal.add_eatable("ethereal:calamari_raw", -2)
+
 minetest.register_craft({
 	output = "ethereal:calamari_raw 2",
 	recipe = {
@@ -659,6 +703,8 @@ minetest.register_craftitem("ethereal:calamari_cooked", {
 	on_use = minetest.item_eat(5)
 })
 
+ethereal.add_eatable("ethereal:calamari_cooked", 5)
+
 minetest.register_craft({
 	output = "ethereal:calamari_cooked",
 	recipe = {
@@ -673,6 +719,8 @@ minetest.register_craftitem("ethereal:fish_n_chips", {
 	inventory_image = "ethereal_fish_chips.png",
 	on_use = minetest.item_eat(6)
 })
+
+ethereal.add_eatable("ethereal:fish_n_chips", 4)
 
 minetest.register_craft({
 	output = "ethereal:fish_n_chips",

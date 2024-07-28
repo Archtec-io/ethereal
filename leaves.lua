@@ -173,7 +173,7 @@ minetest.register_node("ethereal:yellowleaves", {
 	paramtype = "light",
 	walkable = ethereal.leafwalk,
 	waving = 1,
-	groups = {snappy = 3, leafdecay = 3, leaves = 1},
+	groups = {snappy = 3, leafdecay = 3, leaves = 1, eatable = 1},
 	drop = {
 		max_items = 1,
 		items = {
