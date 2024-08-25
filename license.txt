@@ -25,8 +25,15 @@ Textures by TenPlus1 (CC0) unless listed below...
 Textures by NameNotQuality (CC0):
   ethereal_olive_leaves.png
 
+Textures by Jeterel from OpenGameArt.org (CC0):
+  ethereal_banana_bread.png
+
+Textures by SickleMoon and edited by TenPlus1 (CC0):
+   ethereal_illumishroom_red.png
+   ethereal_illumishroom_green.png
+   ethereal_illumishroom_cyan.png
+
 Textures by TenPlus1 and resized/edited by NameNotQuality (CC0):
-  ethereal_bamboo_floor.png
   ethereal_banana_leaf.png
   ethereal_basandra_bush_wood.png
   ethereal_blue_marble.png
@@ -157,10 +164,10 @@ Textures based on default_grass.png and default_grass_side.png by TumeniNodes (C
   ethereal_green_moss.png
 
 Texture by ZonerDarkRevention (CC0)
-  ethereal_crystal_spike.png [edited by TenPlus1]
-  ethereal_bowl.png [edited by TenPlus1]
-  ethereal_teriyaki_beef.png [edited by TenPlus1]
-  ethereal_hearty_stew.png
+  ethereal_bowl.png_32px
+  ethereal_crystal_spike_32px.png [edited by TenPlus1]
+  ethereal_teriyaki_beef_32px.png [edited by TenPlus1]
+  ethereal_hearty_stew_32px.png
 
 Textures by VanessaE (CC-BY-SA 4.0)
   moretrees_acacia_leaves.png
