@@ -29,6 +29,9 @@ Textures by NameNotQuality (CC0):
   ethereal_olive_leaves.png
   ethereal_lemon_leaves.png
   ethereal_frost_wood.png
+  ethereal_frost_tree.png
+  ethereal_frost_tree_top.png
+
 
 Textures by Jeterel from OpenGameArt.org (CC0):
   ethereal_banana_bread.png
@@ -146,8 +149,6 @@ Based on texture by ElementW (CC BY-SA 3.0):
 Based on tree textures by ElementW (CC BY-SA 3.0):
   ethereal_yellow_tree.png
   ethereal_yellow_tree_top.pngethereal_fish_plaice.png
-  ethereal_frost_tree.png
-  ethereal_frost_tree_top.png
   ethereal_scorched_tree.png
   ethereal_scorched_tree_top.png
 
@@ -213,3 +214,9 @@ Created by XSSheep (CC BY-SA 4.0 - https://minecraft.curseforge.com/projects/pix
 
 Sound by I_q (Attribution 3.0) https://freesound.org/people/l_q/sounds/440956/
   ethereal_casting_rod.ogg
+
+Sounds by eZZin (CC0) https://freesound.org/people/eZZin/sounds/667122/
+  ethereal_mushroom.ogg
+
+Sound by Kostrava (CC0) https://freesound.org/people/Kostrava/sounds/333988/
+  ethereal_crystal.ogg
