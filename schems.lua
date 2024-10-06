@@ -52,9 +52,10 @@ register_decoration(ethereal.glacier, {
 	place_on = "default:snowblock",
 	fill_ratio = 0.0005,
 	biomes = {"glacier"},
-	y_min = 3, y_max = 50,
+	y_min = 3, y_max = 30, place_offset_y = -1,
 	schematic = ethereal.igloo,
 	spawn_by = "default:snowblock", num_spawn_by = 8,
+	flags = "place_center_x, place_center_z, force_placement",
 	rotation = "random"})
 
 -- sakura tree
@@ -72,8 +73,16 @@ register_decoration(ethereal.bamboo, {
 register_decoration(ethereal.mesa, {
 	place_on = "default:dirt_with_dry_grass",
 	fill_ratio = 0.0025,
-	biomes = {"mesa"},
+	biomes = {"mesa_redwood"},
 	schematic = ethereal.redwood_tree,
+	flags = "place_center_x, place_center_z",
+	spawn_by = "default:dirt_with_dry_grass", num_spawn_by = 8})
+
+register_decoration(ethereal.mesa, {
+	place_on = "default:dirt_with_dry_grass",
+	fill_ratio = 0.0015,
+	biomes = {"mesa_redwood"},
+	schematic = ethereal.redwood_small_tree,
 	flags = "place_center_x, place_center_z",
 	spawn_by = "default:dirt_with_dry_grass", num_spawn_by = 8})
 
@@ -159,7 +168,7 @@ register_decoration(ethereal.fiery, {
 register_decoration(ethereal.junglee, {
 	place_on = "default:dirt_with_rainforest_litter",
 	fill_ratio = 0.08,
-	biomes = {"junglee"},
+	biomes = {"rainforest"},
 	schematic = dpath .. "jungle_tree.mts"})
 
 -- willow tree
@@ -174,20 +183,38 @@ register_decoration(ethereal.grayness, {
 -- default large pine tree for lower elevation
 
 register_decoration(ethereal.snowy, {
-	place_on = {"default:dirt_with_snow", "default:dirt_with_coniferous_litter"},
+	place_on = {"default:dirt_with_coniferous_litter"},
 	fill_ratio = 0.025,
-	biomes = {"coniferous_forest", "taiga"},
+	biomes = {"coniferous_forest"},
 	y_min = 4, y_max = 50,
 	schematic = dpath .. "pine_tree.mts"})
 
--- small pine for higher elevation
+-- default small pine tree for higher elevation
 
 register_decoration(ethereal.snowy, {
-	place_on = {"default:dirt_with_snow", "default:dirt_with_coniferous_litter"},
+	place_on = {"default:dirt_with_coniferous_litter"},
 	fill_ratio = 0.025,
-	biomes = {"coniferous_forest", "taiga"},
+	biomes = {"coniferous_forest"},
 	y_min = 50, y_max = 140,
-	schematic = ethereal.pinetree})
+	schematic = dpath .. "small_pine_tree.mts"})--ethereal.pinetree})
+
+-- default large snowy pine tree for lower elevation
+
+register_decoration(ethereal.alpine, {
+	place_on = {"default:dirt_with_snow"},
+	fill_ratio = 0.025,
+	biomes = {"taiga"},
+	y_min = 4, y_max = 50,
+	schematic = dpath .. "snowy_pine_tree_from_sapling.mts"})
+
+-- default small snowy pine for higher elevation
+
+register_decoration(ethereal.snowy, {
+	place_on = {"default:dirt_with_snow"},
+	fill_ratio = 0.025,
+	biomes = {"taiga"},
+	y_min = 50, y_max = 140,
+	schematic = dpath .. "snowy_small_pine_tree_from_sapling.mts"})--ethereal.pinetree})
 
 -- default apple tree
 
@@ -281,7 +308,7 @@ register_decoration(ethereal.swamp, {
 
 register_decoration(ethereal.mediterranean, {
 	place_on = "ethereal:grove_dirt",
-	fill_ratio = 0.002,
+	fill_ratio = 0.01,
 	biomes = {"mediterranean"},
 	y_min = 5, y_max = 50,
 	schematic = ethereal.lemontree})
@@ -290,9 +317,9 @@ register_decoration(ethereal.mediterranean, {
 
 register_decoration(ethereal.mediterranean, {
 	place_on = "ethereal:grove_dirt",
-	fill_ratio = 0.002,
+	fill_ratio = 0.01,
 	biomes = {"mediterranean"},
-	y_min = 5, y_max = 35,
+	y_min = 5, y_max = 45,
 	schematic = ethereal.olivetree})
 
 -- default large cactus
@@ -411,7 +438,7 @@ if ethereal.logs == 1 then
 		place_on = {"default:dirt_with_rainforest_litter"},
 		place_offset_y = 1,
 		fill_ratio = 0.005,
-		biomes = {"junglee"},
+		biomes = {"rainforest"},
 		schematic = dpath .. "jungle_log.mts",
 		flags = "place_center_x",
 		rotation = "random",
