@@ -81,7 +81,7 @@ local bonus_items = {
 	{"ethereal:firethorn", "glacier"},
 	{"ethereal:crystal_spike", "frost"},
 	{"ethereal:banana_bunch", "grove"},
-	"tnt:tnt_stick",
+	-- "tnt:tnt_stick",
 	"bucket:bucket_empty",
 	"default:sword_steel 12000",
 	"ethereal:fishing_rod 9000"
