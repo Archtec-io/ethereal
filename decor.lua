@@ -217,7 +217,7 @@ register_decoration(ethereal.mushroom, {
 
 register_decoration(ethereal.mushroom, {
 	place_on = {"default:sand"},
-	fill_ratio = 0.1, y_min = 2, y_max = 6,
+	fill_ratio = 0.03, y_min = 2, y_max = 6,
 	biomes = {"mushroom_ocean"},
 	decoration = "ethereal:slime_mold"})
 

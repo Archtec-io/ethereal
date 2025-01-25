@@ -302,7 +302,7 @@ minetest.register_node("ethereal:sandy", {
 	drop = "default:sand",
 	sounds = default.node_sound_sand_defaults()
 })
-
+--[[
 minetest.register_craft({
 	output = "ethereal:sandy",
 	recipe = {
@@ -311,7 +311,7 @@ minetest.register_craft({
 		{"ethereal:slime_mold", "ethereal:slime_mold", "ethereal:slime_mold"},
 	}
 })
-
+]]--
 -- randomly generate coral or seaweed and have seaweed grow up to 14 high
 
 if ethereal.sealife == 1 then
