@@ -425,5 +425,18 @@ core.register_node("ethereal:mud", {
 	},
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_grass_footstep", gain = 0.25}
-	})
+	}),
+	collision_box = {
+		type = "fixed", fixed = {{-8 / 16, -8 / 16, -8 / 16, 8 / 16, 6 / 16, 8 / 16}}
+	}
+})
+
+core.register_craft({
+	output = "ethereal:mud 8",
+	recipe = {
+		{"default:dirt", "default:dirt", "default:dirt"},
+		{"default:dirt", "bucket:bucket_water", "default:dirt"},
+		{"default:dirt", "default:dirt", "default:dirt"}
+	},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
 })
