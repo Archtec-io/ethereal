@@ -235,7 +235,7 @@ core.register_node("ethereal:palmleaves", {
 
 -- birch tree leaves
 
-core.register_node("ethereal:birch_leaves", {
+local birch_def = {
 	description = S("Birch Leaves"),
 	drawtype = leaftype,
 	visual_scale = leafscale,
@@ -255,7 +255,36 @@ core.register_node("ethereal:birch_leaves", {
 	},
 	sounds = default.node_sound_leaves_defaults(),
 	after_place_node = default.after_place_leaves
-})
+}
+
+core.register_node("ethereal:birch_leaves", table.copy(birch_def))
+
+-- style 1 (cyan)
+
+local tex = "moretrees_birch_leaves_white.png^[multiply:#259797"
+birch_def.tiles = {tex}
+birch_def.inventory_image = l_tex(tex)
+birch_def.wield_image = l_tex(tex)
+birch_def.light_source = 2
+core.register_node("ethereal:birch_leaves2", table.copy(birch_def))
+
+-- style 2 (violet)
+
+local tex = "moretrees_birch_leaves_white.png^[multiply:#da70d6"
+birch_def.tiles = {tex}
+birch_def.inventory_image = l_tex(tex)
+birch_def.wield_image = l_tex(tex)
+
+core.register_node("ethereal:birch_leaves3", table.copy(birch_def))
+
+-- style 3 (gold)
+
+local tex = "moretrees_birch_leaves_white.png^[multiply:#da9100"
+birch_def.tiles = {tex}
+birch_def.inventory_image = l_tex(tex)
+birch_def.wield_image = l_tex(tex)
+
+core.register_node("ethereal:birch_leaves4", table.copy(birch_def))
 
 -- frost tree leaves
 
@@ -643,6 +672,9 @@ if core.settings:get_bool("ethereal.leaf_particles") ~= false then
 		{"ethereal:willow_twig", "0b9445"},
 		{"ethereal:yellowleaves", "8b5f00", 9},
 		{"ethereal:birch_leaves", "274527"},
+		{"ethereal:birch_leaves2", "259797", 2},
+		{"ethereal:birch_leaves3", "da70d6", 2},
+		{"ethereal:birch_leaves4", "da9100", 2},
 		{"ethereal:palmleaves", "2b6000"},
 		{"ethereal:bamboo_leaves", "445811"},
 		{"ethereal:mangrove_leaves", "6a7039"},
