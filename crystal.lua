@@ -210,6 +210,8 @@ core.register_craft({
 -- backup old function and replace with new silk touch ability for crystal shovel
 
 local old_handle_node_drops = core.handle_node_drops
+local get_node = core.get_node
+
 local shovels = {
 	["ethereal:shovel_crystal"] = true,
 	["ethereal:enchanted_shovel_crystal_durable"] = true,
@@ -224,7 +226,7 @@ function core.handle_node_drops(pos, drops, digger)
 		return old_handle_node_drops(pos, drops, digger)
 	end
 
-	local nn = core.get_node(pos).name
+	local nn = get_node(pos).name
 
 	if core.get_item_group(nn, "crumbly") == 0
 	or core.get_item_group(nn, "no_silktouch") == 1 then
