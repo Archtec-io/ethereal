@@ -101,6 +101,14 @@ several examples are at the documentation of [api.txt](api.txt) file.
 A huge thanks to Chinchow who was the inspiration behind Ethereal and everyone
 who helped make this mod bigger and better throughout it's release :)
 
+### 1.34
+ - Add animated falling leaves (thanks EdgeLoopRepeat).
+ - Add xnether falling leaves.
+ - Add magical and cold moss types.
+ - Update flora spread Abm to include substrate check.
+ - Fiery shrub and magical; spore; snowy; crystal grasses only grow on their own soil type.
+ - Firethorn bush only grows on cold dirt and dirt with snow.
+
 ### 1.33
  - Added Mangrove biome (based on mineclonia)
  - Added Mangrove wooden doors, fences, stairs

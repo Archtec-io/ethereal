@@ -15,6 +15,7 @@ minetest.register_node("ethereal:magical_grass", {
 	walkable = false,
 	buildable_to = true,
 	light_source = 1,
+flora_substrate = "ethereal:magical_dirt",
 	groups = {snappy = 3, flora = 1, attached_node = 1, grass = 1,
 		normal_grass = 1, flammable = 1},
 	sounds = default.node_sound_leaves_defaults(),
@@ -64,6 +65,7 @@ core.register_node("ethereal:spore_grass", {
 	waving = 1,
 	walkable = false,
 	buildable_to = true,
+flora_substrate = "ethereal:mushroom_dirt",
 	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -84,6 +86,7 @@ core.register_node("ethereal:firethorn", {
 	waving = 1,
 	walkable = false,
 	buildable_to = true,
+flora_substrate = {"ethereal:cold_dirt", "default:dirt_with_snow"},
 	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -251,6 +254,7 @@ core.register_node("ethereal:dry_shrub", {
 	waving = 1,
 	walkable = false,
 	buildable_to = true,
+flora_substrate = "ethereal:fiery_dirt",
 	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -272,6 +276,7 @@ core.register_node("ethereal:snowygrass", {
 	waving = 1,
 	walkable = false,
 	buildable_to = true,
+flora_substrate = "ethereal:gray_dirt",
 	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -293,6 +298,7 @@ core.register_node("ethereal:crystalgrass", {
 	waving = 1,
 	walkable = false,
 	buildable_to = true,
+flora_substrate = "ethereal:crystal_dirt",
 	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -353,7 +359,7 @@ add_moss("gray", "Gray", "ethereal_grass_gray_top.png", "ethereal:snowygrass")
 add_moss("green", "Green", "default_grass.png", "default:jungleleaves")
 add_moss("bamboo", "Bamboo", "ethereal_grass_bamboo_top.png", "ethereal:bamboo_leaves")
 add_moss("prairie", "Prairie", "ethereal_grass_prairie_top.png", "ethereal:orange_leaves")
-add_moss("cold", "Cold", "ethereal_grass_cold_top.png", "ethereal:pine_leaves")
+add_moss("cold", "Cold", "ethereal_grass_cold_top.png", "default:pine_needles")
 add_moss("magical", "Magical", "ethereal_grass_magical_top.png", "ethereal:magical_grass")
 
 -- shroom helper function
