@@ -409,7 +409,8 @@ core.register_craft({
 
 core.register_craftitem("ethereal:charcoal_lump", {
 	description = S("Lump of Charcoal"),
-	inventory_image = "ethereal_charcoal_lump.png"
+	inventory_image = "ethereal_charcoal_lump.png",
+	groups = {charcoal = 1}
 })
 
 core.register_craft({
@@ -439,7 +440,24 @@ core.register_node("ethereal:charcoal_block", {
 	tiles = {"ethereal_charcoal_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 3},
-	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_stone_defaults(),
+	after_destruct = function(pos, oldnode)
+
+		pos.y = pos.y + 1
+
+		if core.get_node(pos).name == "fire:permanent_flame" then
+			core.remove_node(pos)
+		end
+	end,
+
+	on_ignite = function(pos, igniter)
+
+		local flame_pos = {x = pos.x, y = pos.y + 1, z = pos.z}
+
+		if core.get_node(flame_pos).name == "air" then
+			core.set_node(flame_pos, {name = "fire:permanent_flame"})
+		end
+	end
 })
 
 core.register_craft({
@@ -458,7 +476,7 @@ core.register_craft({
 
 core.register_craft({
 	type = "fuel",
-	recipe = "charcoal:charcoal_block",
+	recipe = "ethereal:charcoal_block",
 	burntime = 280,
 })
 
@@ -467,7 +485,7 @@ core.register_craft({
 core.register_craft({
 	output = "default:torch 4",
 	recipe = {
-		{"ethereal:charcoal_lump"},
+		{"group:charcoal"},
 		{"default:stick"}
 	}
 })
